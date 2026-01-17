@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PW-CARE | Digital Healthcare Platform</title>
+    <meta
+      name="description"
+      content="Advanced digital healthcare platform connecting patients to experienced medical professionals instantly with real-time appointment booking, secure digital records, and smart technology."
+    />
+    <meta
+      name="keywords"
+      content="healthcare, doctors, appointment, medical, online consultation, hospital, emergency"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- CSS CDNs -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Topbar -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- LEFT CONTACT DETAILS -->
+        <div class="contact-info d-flex align-items-center">
+          <span>
+            <i class="bi bi-envelope"></i>
+            <a href="mailto:pwcare@gmail.com">pwcare@gmail.com</a>
+          </span>
+          <span>
+            <i class="bi bi-phone"></i>
+            +91 83765 72523
+          </span>
+          <span>
+            <i class="bi bi-clock"></i>
+            Mon-Sun: 24/7 Open
+          </span>
+        </div>
+
+        <!-- RIGHT SOCIAL ICONS -->
+        <div class="social-links d-flex align-items-center">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo me-auto"><a href="index.html">PW-CARE</a></h1>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a href="#home" class="nav-link scrollto active">Home</a></li>
+            <li><a href="#about" class="nav-link scrollto">About</a></li>
+            <li><a href="#services" class="nav-link scrollto">Services</a></li>
+            <li><a href="#doctors" class="nav-link scrollto">Doctors</a></li>
+            <li><a href="#contact" class="nav-link scrollto">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+        <a href="#appointment" class="appointment-btn scrollto">
+          <i class="bi bi-calendar-check me-2"></i>
+          <span class="d-none d-md-inline">Make an </span>Appointment
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1 class="animate__animated animate__fadeInDown">
+              Welcome to <span>PW Healthcare</span>
+            </h1>
+            <h2 class="animate__animated animate__fadeInUp">
+              We are a team of specialized doctors.<br />
+              <i>"Your devotion and care bring healing, comfort and hope."</i>
+            </h2>
+            <div
+              class="mt-4 animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+            >
+              <a href="#about" class="btn-get-started scrollto">Learn More</a>
+              <a
+                href="#appointment"
+                class="btn-get-started scrollto ms-3"
+                style="
+                  background: transparent;
+                  color: var(--primary-color);
+                  border: 2px solid var(--primary-color);
+                "
+              >
+                Book Appointment
+              </a>
+            </div>
+
+            <div
+              class="row mt-5 animate__animated animate__fadeInUp"
+              style="animation-delay: 0.4s"
+            >
+              <div class="col-md-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                  <span>24/7 Emergency</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                  <span>Expert Doctors</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-check-circle-fill text-success me-2 fs-4"></i>
+                  <span>Online Consultation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section id="featured-section" class="featured-services">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-4 mb-lg-0"
+          >
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4 class="title"><a href="#">Normal Checkup</a></h4>
+              <p class="description">
+                Routine health checkup for early detection & long-term wellness.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-4 mb-lg-0"
+          >
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="fas fa-dna"></i></div>
+              <h4 class="title"><a href="#">Blood Test</a></h4>
+              <p class="description">
+                Accurate diagnostic blood testing with fast and reliable
+                reports.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-4 mb-lg-0"
+          >
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="fas fa-temperature-high"></i></div>
+              <h4 class="title"><a href="#">Body Temperature</a></h4>
+              <p class="description">
+                Instant temperature analysis for fever and infection monitoring.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3 d-flex align-items-stretch mb-4 mb-lg-0"
+          >
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon">
+                <i class="fas fa-hand-holding-medical"></i>
+              </div>
+              <h4 class="title"><a href="#">Medicine Support</a></h4>
+              <p class="description">
+                Guidance on proper medication usage and dosage safety.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Us</h2>
+          <p>
+            PW-CARE is an advanced digital healthcare platform that connects
+            patients to experienced medical professionals instantly. Through
+            real-time appointment booking, secure digital records, and smart
+            technology, we make healthcare easier, faster, and more accessible.
+            <br /><br />
+            Our mission is to modernize traditional healthcare with innovation
+            and expertise — enabling patients to consult specialists, track
+            health records, and receive medical support anytime, anywhere.
+          </p>
+        </div>
+
+        <div class="row align-items-center">
+          <!-- LEFT IMAGE / VIDEO -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="about-img-wrapper position-relative">
+              <img
+                src="./about.jpg"
+                class="img-fluid about-img"
+                alt="About PW-CARE"
+              />
+              <a
+                href="https://youtu.be/NW6Dgax2d6I"
+                class="play-btn glightbox"
+              ></a>
+              <div class="badge-new">NEW</div>
+            </div>
+          </div>
+
+          <!-- RIGHT FEATURES -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="about-card">
+              <div class="about-icon icon-blue">
+                <i class="bx bx-heart"></i>
+              </div>
+              <div class="about-text">
+                <h4>Health is Wealth</h4>
+                <p>
+                  Early detection, prevention, and long-term health management
+                  through regular checkups.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-card">
+              <div class="about-icon icon-teal">
+                <i class="bx bx-plus-medical"></i>
+              </div>
+              <div class="about-text">
+                <h4>Emergency Support</h4>
+                <p>
+                  24/7 availability of expert doctors for quick medical
+                  assistance when it matters most.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-card">
+              <div class="about-icon icon-sky">
+                <i class="bx bx-help-circle"></i>
+              </div>
+              <div class="about-text">
+                <h4>Specialized Services</h4>
+                <p>
+                  Access to specialists in cardiology, neurology, pediatrics,
+                  orthopedics, and more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Counts Section -->
+    <section id="counts" class="counts">
+      <div class="container">
+        <div class="row g-4">
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="count-box">
+              <div class="icon-bg"><i class="fas fa-user-md"></i></div>
+              <span
+                data-purecounter-start="0"
+                data-purecounter-end="95"
+                data-purecounter-duration="1"
+                class="purecounter"
+              ></span>
+              <p>
+                <strong>Doctors</strong> providing world-class medical support.
+              </p>
+              <a href="#doctors">Learn More »</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="count-box">
+              <div class="icon-bg"><i class="fas fa-hospital"></i></div>
+              <span
+                data-purecounter-start="0"
+                data-purecounter-end="55"
+                data-purecounter-duration="1"
+                class="purecounter"
+              ></span>
+              <p>
+                <strong>Departments</strong> specializing in advanced treatment.
+              </p>
+              <a href="#services">Learn More »</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="count-box">
+              <div class="icon-bg"><i class="fas fa-flask"></i></div>
+              <span
+                data-purecounter-start="0"
+                data-purecounter-end="45"
+                data-purecounter-duration="1"
+                class="purecounter"
+              ></span>
+              <p>
+                <strong>Research</strong> programs improving medical innovation.
+              </p>
+              <a href="#">Learn More »</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="count-box">
+              <div class="icon-bg"><i class="fas fa-award"></i></div>
+              <span
+                data-purecounter-start="0"
+                data-purecounter-end="225"
+                data-purecounter-duration="1"
+                class="purecounter"
+              ></span>
+              <p>
+                <strong>Awards</strong> recognizing our excellence in
+                healthcare.
+              </p>
+              <a href="#">Learn More »</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Services</h2>
+          <p>
+            We offer world-class medical services backed by modern technology
+            and experienced doctors.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- SERVICE ITEMS with data-aos -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-card">
+              <i class="fas fa-heartbeat"></i>
+              <h4>Regular Checkup</h4>
+              <p>
+                Routine body checkup to maintain your overall health condition.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-card">
+              <i class="fas fa-pills"></i>
+              <h4>Medicine</h4>
+              <p>
+                High quality medicines are available 24/7 with instant support.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="service-card">
+              <i class="fas fa-hospital-user"></i>
+              <h4>Pharmacology</h4>
+              <p>
+                Expert pharmaceutical services for proper medication guidance.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-card">
+              <i class="fas fa-dna"></i>
+              <h4>Blood Test</h4>
+              <p>
+                Accurate blood testing with fast and detailed laboratory
+                reports.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-card">
+              <i class="fas fa-wheelchair"></i>
+              <h4>Disabled Care</h4>
+              <p>
+                Specialized support & medical care for disabled individuals.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="service-card">
+              <i class="fas fa-notes-medical"></i>
+              <h4>Health Post</h4>
+              <p>Emergency first-aid treatment available anytime.</p>
+            </div>
+          </div>
+
+          <!-- EXTRA SERVICES -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-card">
+              <i class="fas fa-ambulance"></i>
+              <h4>24x7 Ambulance</h4>
+              <p>
+                Fast and reliable emergency ambulance support at your doorstep.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-card">
+              <i class="fas fa-user-md"></i>
+              <h4>Specialist Doctors</h4>
+              <p>
+                Consult highly experienced doctors from all medical departments.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="service-card">
+              <i class="fas fa-x-ray"></i>
+              <h4>X-Ray & Scanning</h4>
+              <p>Modern diagnostic imaging with advanced medical machines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Make an Appointment</h2>
+          <p>
+            Book your appointment with our expert doctors easily. Select date,
+            age, and doctor preference.
+          </p>
+        </div>
+
+        <div class="appointment-box" data-aos="fade-up" data-aos-delay="100">
+          <form id="appointmentForm">
+            <div class="row">
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input
+                  type="tel"
+                  name="phone"
+                  class="form-control"
+                  placeholder="Your Phone"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input
+                  type="datetime-local"
+                  name="date"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <select name="age" class="form-select" required>
+                  <option value="">Select Age</option>
+                  <option>Below 18</option>
+                  <option>18–40</option>
+                  <option>40–60</option>
+                  <option>60 Above</option>
+                </select>
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <select name="doctor" class="form-select" required>
+                  <option value="">Select Doctor</option>
+                  <option>Dr. Rozaan Chitarkar - General Medicine</option>
+                  <option>Dr. Pratiksha Rai - Anesthesiologist</option>
+                  <option>Dr. Bratt Walson - Cardiologist</option>
+                  <option>Dr. Lauren Jones - Neurologist</option>
+                  <option>Other Specialist</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group mt-3">
+              <textarea
+                name="message"
+                class="form-control"
+                rows="5"
+                placeholder="Message (Optional)"
+              ></textarea>
+            </div>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="appointment-btn pulse">
+                <i class="bi bi-calendar-check me-2"></i>Make an Appointment
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="doctors">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Expert Doctors</h2>
+          <p>
+            Meet our team of experienced and certified medical professionals.
+            Each specialist is dedicated to providing world-class healthcare
+            services with compassion, precision, and excellence.
+          </p>
+        </div>
+
+        <div class="row gy-4">
+          <!-- Doctor 1 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="doctor-card d-flex align-items-center">
+              <div class="doctor-img">
+                <img src="./1.png" alt="Dr. Rozaan Chitarkar" />
+              </div>
+              <div class="doctor-info">
+                <h4>Dr. Rozaan Chitarkar</h4>
+                <h6>Chief Medical Officer — MBBS, MD (General Medicine)</h6>
+                <p>
+                  15+ years experience in advanced internal medicine and patient
+                  care management.
+                </p>
+                <div class="social">
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                  <a href="#"><i class="ri-instagram-fill"></i></a>
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 2 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="doctor-card d-flex align-items-center">
+              <div class="doctor-img">
+                <img src="./2.jpg" alt="Dr. Pratiksha Rai" />
+              </div>
+              <div class="doctor-info">
+                <h4>Dr. Pratiksha Rai</h4>
+                <h6>Anesthesiologist — MBBS, MD (Anesthesia)</h6>
+                <p>
+                  Specialist in surgical anesthesia, critical care, and pain
+                  management.
+                </p>
+                <div class="social">
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                  <a href="#"><i class="ri-instagram-fill"></i></a>
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 3 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="doctor-card d-flex align-items-center">
+              <div class="doctor-img">
+                <img src="./3.jpg" alt="Dr. Bratt Walson" />
+              </div>
+              <div class="doctor-info">
+                <h4>Dr. Bratt Walson</h4>
+                <h6>Cardiologist — MBBS, DM (Cardiology)</h6>
+                <p>
+                  Expert in heart diseases, ECG, angioplasty and cardiovascular
+                  treatments.
+                </p>
+                <div class="social">
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                  <a href="#"><i class="ri-instagram-fill"></i></a>
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 4 -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="doctor-card d-flex align-items-center">
+              <div class="doctor-img">
+                <img src="./4.jpg" alt="Dr. Lauren Jones" />
+              </div>
+              <div class="doctor-info">
+                <h4>Dr. Lauren Jones</h4>
+                <h6>Neurologist — MBBS, DM (Neurology)</h6>
+                <p>
+                  Specialized in brain & nervous system disorders, migraine, and
+                  stroke care.
+                </p>
+                <div class="social">
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                  <a href="#"><i class="ri-instagram-fill"></i></a>
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact</h2>
+          <p>
+            Have questions? Need help or support? Our team is available 24/7 to
+            assist you. Reach out through phone, email, or submit your message
+            below.
+          </p>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.967196624166!2d77.32989007570649!3d28.540705688244365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce79f30e621e9%3A0x1591141e17c28c44!2sPW%20Institute%20of%20Innovation%20Noida%20(Sector%20126)!5e0!3m2!1sen!2sin!4v1768496628051"
+          width="100%"
+          height="380"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row gy-4 align-items-stretch">
+          <!-- Left Info Boxes -->
+          <div class="col-lg-4">
+            <div class="info-box">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location</h4>
+              <p>PW Hospital Road, Noida 201301</p>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-envelope"></i>
+              <h4>Email</h4>
+              <p>pwcare@gmail.com</p>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-phone"></i>
+              <h4>Phone</h4>
+              <p>+91 83765 72523</p>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-clock"></i>
+              <h4>Open Hours</h4>
+              <p>24/7 Emergency Services Available</p>
+            </div>
+          </div>
+
+          <!-- Right Contact Form -->
+          <div class="col-lg-8">
+            <form id="contactForm" class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    class="form-control"
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <input
+                class="form-control mt-3"
+                type="text"
+                placeholder="Subject"
+                required
+              />
+
+              <textarea
+                class="form-control mt-3"
+                rows="5"
+                placeholder="Message (Optional)"
+              ></textarea>
+
+              <div class="text-center mt-4">
+                <button type="submit" class="btn-send">
+                  <i class="bi bi-send me-2"></i>Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <!-- LOGO + ABOUT -->
+            <div class="col-lg-3 col-md-6 footer-info">
+              <h3>PW CARE</h3>
+              <p class="footer-desc">
+                PW CARE is committed to providing reliable, fast, and quality
+                healthcare services. Our mission is to make medical support
+                accessible for everyone.
+              </p>
+
+              <p class="footer-contact">
+                PW HOSPITAL ROAD <br />
+                201301 NOIDA, INDIA <br />
+                <strong>Phone:</strong> +91 83765 72523 <br />
+                <strong>Email:</strong> pwcare@gmail.com
+              </p>
+
+              <div class="social-links mt-3">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+                <a href="#"><i class="bx bxl-youtube"></i></a>
+              </div>
+            </div>
+
+            <!-- USEFUL LINKS -->
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i><a href="#home">Home</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#about">About Us</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#services">Services</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#doctors">Doctors</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- SERVICES -->
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#services">Emergency Care</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#services">24/7 Support</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#services">Diagnostics</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#services">Online Consultation</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i
+                  ><a href="#services">Medicine Delivery</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="col-lg-3 col-md-6 footer-newsletter">
+              <h4>Subscribe Newsletter</h4>
+              <p>Get the latest healthcare updates directly in your inbox.</p>
+              <form id="newsletterForm">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+                <button type="submit">Subscribe</button>
+              </form>
+              <div class="mt-3">
+                <small class="text-muted"
+                  >We respect your privacy. Unsubscribe at any time.</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          © 2026 <strong><span>PW-CARE</span></strong> — All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918376572523" class="whatsapp-float" target="_blank">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- SUCCESS POPUP -->
+    <div id="successPopup" class="popup-overlay">
+      <div class="popup-box">
+        <h3>🎉 Appointment Booked Successfully!</h3>
+        <p>
+          Your appointment has been successfully scheduled. Our team will
+          contact you soon to confirm the details.
+        </p>
+        <button id="closePopup">OK</button>
+      </div>
+    </div>
+
+    <!-- CONTACT POPUP -->
+    <div id="contactPopup" class="popup-overlay">
+      <div class="popup-box">
+        <h3>Message Sent!</h3>
+        <p>Thank you for contacting us. We will get back to you shortly.</p>
+        <button id="closeContactPopup">OK</button>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER POPUP -->
+    <div id="newsletterPopup" class="popup-overlay">
+      <div class="popup-box">
+        <h3>Subscribed Successfully!</h3>
+        <p>
+          Thank you for subscribing to our newsletter. You will receive
+          healthcare updates in your inbox.
+        </p>
+        <button id="closeNewsletterPopup">OK</button>
+      </div>
+    </div>
+
+    <!-- JS CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- PURECOUNTER -->
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+    <!-- MAIN CUSTOM SCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
