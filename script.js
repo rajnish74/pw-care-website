@@ -1,384 +1,245 @@
+// Preloader
+window.addEventListener('load', function() {
+  const preloader = document.getElementById('preloader');
+  setTimeout(() => {
+    preloader.style.display = 'none';
+  }, 500);
+});
 
-      (function () {
-        "use strict";
+// Mobile Navigation Toggle - FIXED
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#navbar ul');
+  const body = document.querySelector('body');
+  
+  console.log("Mobile Nav Toggle Element:", mobileNavToggle);
+  console.log("Navbar UL Element:", navbar);
 
-        /**
-         * Preloader
-         */
-        window.addEventListener("load", function () {
-          const preloader = document.getElementById("preloader");
-          if (preloader) {
-            setTimeout(function () {
-              preloader.style.opacity = "0";
-              preloader.style.visibility = "hidden";
-              setTimeout(function () {
-                preloader.style.display = "none";
-              }, 500);
-            }, 1000);
-          }
-        });
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("Mobile toggle clicked!");
+      
+      // Toggle active class for icon
+      if (this.classList.contains('bi-list')) {
+        // Open menu - change to X
+        this.classList.remove('bi-list');
+        this.classList.add('bi-x');
+        console.log("Changed to X icon");
+      } else {
+        // Close menu - change to hamburger
+        this.classList.remove('bi-x');
+        this.classList.add('bi-list');
+        console.log("Changed to hamburger icon");
+      }
+      
+      // Toggle navbar visibility
+      navbar.classList.toggle('show');
+      body.classList.toggle('mobile-nav-active');
+      
+      console.log("Navbar show class:", navbar.classList.contains('show'));
+    });
+  }
 
-        /**
-         * Easy selector helper function
-         */
-        const select = (el, all = false) => {
-          el = el.trim();
-          if (all) {
-            return [...document.querySelectorAll(el)];
-          } else {
-            return document.querySelector(el);
-          }
-        };
+  // Close mobile menu when clicking on nav links
+  const navLinks = document.querySelectorAll('#navbar ul li a');
+  navLinks.forEach(function(navLink) {
+    navLink.addEventListener('click', function() {
+      console.log("Nav link clicked, closing menu");
+      // Close mobile menu
+      if (navbar.classList.contains('show')) {
+        navbar.classList.remove('show');
+        mobileNavToggle.classList.remove('bi-x');
+        mobileNavToggle.classList.add('bi-list');
+        body.classList.remove('mobile-nav-active');
+      }
+    });
+  });
 
-        /**
-         * Easy event listener function
-         */
-        const on = (type, el, listener, all = false) => {
-          let selectEl = select(el, all);
-          if (selectEl) {
-            if (all) {
-              selectEl.forEach((e) => e.addEventListener(type, listener));
-            } else {
-              selectEl.addEventListener(type, listener);
-            }
-          }
-        };
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const isClickInsideNavbar = navbar.contains(e.target);
+    const isClickOnToggle = mobileNavToggle.contains(e.target);
+    
+    if (navbar.classList.contains('show') && !isClickInsideNavbar && !isClickOnToggle) {
+      console.log("Clicked outside, closing menu");
+      navbar.classList.remove('show');
+      mobileNavToggle.classList.remove('bi-x');
+      mobileNavToggle.classList.add('bi-list');
+      body.classList.remove('mobile-nav-active');
+    }
+  });
 
-        /**
-         * Easy on scroll event listener
-         */
-        const onscroll = (el, listener) => {
-          el.addEventListener("scroll", listener);
-        };
+  // Close mobile menu on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navbar.classList.contains('show')) {
+      console.log("Escape key pressed, closing menu");
+      navbar.classList.remove('show');
+      mobileNavToggle.classList.remove('bi-x');
+      mobileNavToggle.classList.add('bi-list');
+      body.classList.remove('mobile-nav-active');
+    }
+  });
+});
 
-        /**
-         * Navbar links active state on scroll
-         */
-        let navbarlinks = select("#navbar .scrollto", true);
-        const navbarlinksActive = () => {
-          let position = window.scrollY + 200;
-          navbarlinks.forEach((navbarlink) => {
-            if (!navbarlink.hash) return;
-            let section = select(navbarlink.hash);
-            if (!section) return;
-            if (
-              position >= section.offsetTop &&
-              position <= section.offsetTop + section.offsetHeight
-            ) {
-              navbarlink.classList.add("active");
-            } else {
-              navbarlink.classList.remove("active");
-            }
-          });
-        };
-        window.addEventListener("load", navbarlinksActive);
-        onscroll(document, navbarlinksActive);
+// Header Scroll Effect
+window.addEventListener('scroll', function() {
+  const header = document.getElementById('header');
+  const topbar = document.getElementById('topbar');
+  const backtotop = document.querySelector('.back-to-top');
+  
+  if (window.scrollY > 100) {
+    header.classList.add('header-scrolled');
+    if (topbar) {
+      topbar.classList.add('topbar-scrolled');
+    }
+  } else {
+    header.classList.remove('header-scrolled');
+    if (topbar) {
+      topbar.classList.remove('topbar-scrolled');
+    }
+  }
 
-        /**
-         * Scrolls to an element with header offset
-         */
-        const scrollto = (el) => {
-          let header = select("#header");
-          let offset = header.offsetHeight;
+  if (window.scrollY > 300) {
+    backtotop.classList.add('active');
+  } else {
+    backtotop.classList.remove('active');
+  }
+});
 
-          if (!header.classList.contains("header-scrolled")) {
-            offset -= 16;
-          }
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a.scrollto').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 70,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
-          let elementPos = select(el).offsetTop;
-          window.scrollTo({
-            top: elementPos - offset,
-            behavior: "smooth",
-          });
-        };
+// Initialize AOS Animation
+AOS.init({
+  duration: 1000,
+  easing: 'ease-in-out',
+  once: true,
+  mirror: false
+});
 
-        /**
-         * Toggle .header-scrolled class to #header when page is scrolled
-         */
-        let selectHeader = select("#header");
-        let selectTopbar = select("#topbar");
-        if (selectHeader) {
-          const headerScrolled = () => {
-            if (window.scrollY > 100) {
-              selectHeader.classList.add("header-scrolled");
-              if (selectTopbar) {
-                selectTopbar.classList.add("topbar-scrolled");
-              }
-            } else {
-              selectHeader.classList.remove("header-scrolled");
-              if (selectTopbar) {
-                selectTopbar.classList.remove("topbar-scrolled");
-              }
-            }
-          };
-          window.addEventListener("load", headerScrolled);
-          onscroll(document, headerScrolled);
-        }
+// Initialize PureCounter
+new PureCounter();
 
-        /**
-         * Mobile nav toggle
-         */
-        on("click", ".mobile-nav-toggle", function (e) {
-          select("#navbar").classList.toggle("navbar-mobile");
-          this.classList.toggle("bi-list");
-          this.classList.toggle("bi-x");
-        });
+// Initialize GLightbox
+const lightbox = GLightbox({
+  selector: '.glightbox',
+  touchNavigation: true,
+  loop: true,
+  autoplayVideos: true
+});
 
-        /**
-         * Scroll with ofset on links with a class name .scrollto
-         */
-        on(
-          "click",
-          ".scrollto",
-          function (e) {
-            if (select(this.hash)) {
-              e.preventDefault();
+// Appointment Form Submission
+const appointmentForm = document.getElementById('appointmentForm');
+if (appointmentForm) {
+  appointmentForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show success popup
+    const successPopup = document.getElementById('successPopup');
+    successPopup.style.display = 'flex';
+    
+    // Reset form
+    this.reset();
+    
+    // Close popup
+    document.getElementById('closePopup').addEventListener('click', function() {
+      successPopup.style.display = 'none';
+    });
+    
+    // Close popup when clicking outside
+    successPopup.addEventListener('click', function(e) {
+      if (e.target === this) {
+        successPopup.style.display = 'none';
+      }
+    });
+  });
+}
 
-              let navbar = select("#navbar");
-              if (navbar.classList.contains("navbar-mobile")) {
-                navbar.classList.remove("navbar-mobile");
-                let navbarToggle = select(".mobile-nav-toggle");
-                navbarToggle.classList.toggle("bi-list");
-                navbarToggle.classList.toggle("bi-x");
-              }
-              scrollto(this.hash);
-            }
-          },
-          true
-        );
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show contact popup
+    const contactPopup = document.getElementById('contactPopup');
+    contactPopup.style.display = 'flex';
+    
+    // Reset form
+    this.reset();
+    
+    // Close popup
+    document.getElementById('closeContactPopup').addEventListener('click', function() {
+      contactPopup.style.display = 'none';
+    });
+    
+    // Close popup when clicking outside
+    contactPopup.addEventListener('click', function(e) {
+      if (e.target === this) {
+        contactPopup.style.display = 'none';
+      }
+    });
+  });
+}
 
-        /**
-         * Scroll with ofset on page load with hash links in the url
-         */
-        window.addEventListener("load", () => {
-          if (window.location.hash) {
-            if (select(window.location.hash)) {
-              scrollto(window.location.hash);
-            }
-          }
-        });
+// Newsletter Form Submission
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show newsletter popup
+    const newsletterPopup = document.getElementById('newsletterPopup');
+    newsletterPopup.style.display = 'flex';
+    
+    // Reset form
+    this.reset();
+    
+    // Close popup
+    document.getElementById('closeNewsletterPopup').addEventListener('click', function() {
+      newsletterPopup.style.display = 'none';
+    });
+    
+    // Close popup when clicking outside
+    newsletterPopup.addEventListener('click', function(e) {
+      if (e.target === this) {
+        newsletterPopup.style.display = 'none';
+      }
+    });
+  });
+}
 
-        /**
-         * Initiate glightbox
-         */
-        const glightbox = GLightbox({
-          selector: ".glightbox",
-          touchNavigation: true,
-          loop: true,
-          autoplayVideos: true,
-        });
+// Back to Top Button
+document.querySelector('.back-to-top').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
-        /**
-         * Back to top button
-         */
-        let backtotop = select(".back-to-top");
-        if (backtotop) {
-          const toggleBacktotop = () => {
-            if (window.scrollY > 100) {
-              backtotop.classList.add("active");
-            } else {
-              backtotop.classList.remove("active");
-            }
-          };
-          window.addEventListener("load", toggleBacktotop);
-          onscroll(document, toggleBacktotop);
-        }
-
-        /**
-         * Initialize AOS (Animate On Scroll)
-         */
-        AOS.init({
-          duration: 1000,
-          easing: "ease-in-out",
-          once: true,
-          mirror: false,
-        });
-
-        /**
-         * Initialize PureCounter
-         */
-        document.addEventListener("DOMContentLoaded", function () {
-          if (typeof PureCounter !== "undefined") {
-            new PureCounter({
-              duration: 2,
-              delay: 10,
-              once: true,
-              legacy: false,
-            });
-          }
-        });
-
-        /**
-         * Appointment Form Submission
-         */
-        document
-          .getElementById("appointmentForm")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Show success popup
-            document.getElementById("successPopup").style.display = "flex";
-
-            // In a real application, you would send data to a server here
-            console.log("Appointment form submitted:", {
-              name: this.name.value,
-              email: this.email.value,
-              phone: this.phone.value,
-              date: this.date.value,
-              age: this.age.value,
-              doctor: this.doctor.value,
-              message: this.message.value,
-            });
-          });
-
-        // Close appointment popup
-        document
-          .getElementById("closePopup")
-          .addEventListener("click", function () {
-            document.getElementById("successPopup").style.display = "none";
-            document.getElementById("appointmentForm").reset();
-          });
-
-        /**
-         * Contact Form Submission
-         */
-        document
-          .getElementById("contactForm")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Show contact popup
-            document.getElementById("contactPopup").style.display = "flex";
-
-            // In a real application, you would send data to a server here
-            console.log("Contact form submitted:", {
-              name: this.name.value,
-              email: this.email.value,
-              subject: this.subject.value,
-              message: this.message.value,
-            });
-          });
-
-        // Close contact popup
-        document
-          .getElementById("closeContactPopup")
-          .addEventListener("click", function () {
-            document.getElementById("contactPopup").style.display = "none";
-            document.getElementById("contactForm").reset();
-          });
-
-        /**
-         * Newsletter Form Submission
-         */
-        document
-          .getElementById("newsletterForm")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Show newsletter popup
-            document.getElementById("newsletterPopup").style.display = "flex";
-
-            // In a real application, you would send data to a server here
-            console.log("Newsletter subscription:", {
-              email: this.email.value,
-            });
-
-            // Reset form
-            this.reset();
-          });
-
-        // Close newsletter popup
-        document
-          .getElementById("closeNewsletterPopup")
-          .addEventListener("click", function () {
-            document.getElementById("newsletterPopup").style.display = "none";
-          });
-
-        /**
-         * Close popups when clicking outside
-         */
-        window.addEventListener("click", function (e) {
-          const popups = ["successPopup", "contactPopup", "newsletterPopup"];
-          popups.forEach((popupId) => {
-            const popup = document.getElementById(popupId);
-            if (popup && e.target === popup) {
-              popup.style.display = "none";
-              if (popupId === "successPopup")
-                document.getElementById("appointmentForm").reset();
-              if (popupId === "contactPopup")
-                document.getElementById("contactForm").reset();
-            }
-          });
-        });
-
-        /**
-         * Add typing effect to hero section (optional enhancement)
-         */
-        const typedTextSpan = document.querySelector(".typed-text");
-        if (typedTextSpan) {
-          const textArray = [
-            "Healthcare",
-            "Wellness",
-            "Medical Support",
-            "Treatment",
-          ];
-          const typingDelay = 100;
-          const erasingDelay = 100;
-          const newTextDelay = 1000;
-          let textArrayIndex = 0;
-          let charIndex = 0;
-
-          function type() {
-            if (charIndex < textArray[textArrayIndex].length) {
-              typedTextSpan.textContent +=
-                textArray[textArrayIndex].charAt(charIndex);
-              charIndex++;
-              setTimeout(type, typingDelay);
-            } else {
-              setTimeout(erase, newTextDelay);
-            }
-          }
-
-          function erase() {
-            if (charIndex > 0) {
-              typedTextSpan.textContent = textArray[textArrayIndex].substring(
-                0,
-                charIndex - 1
-              );
-              charIndex--;
-              setTimeout(erase, erasingDelay);
-            } else {
-              textArrayIndex++;
-              if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-              setTimeout(type, typingDelay + 1100);
-            }
-          }
-
-          // Start typing effect on page load
-          setTimeout(type, newTextDelay + 250);
-        }
-
-        /**
-         * Add scroll animation to elements
-         */
-        function revealOnScroll() {
-          const reveals = document.querySelectorAll(".reveal");
-
-          for (let i = 0; i < reveals.length; i++) {
-            const windowHeight = window.innerHeight;
-            const elementTop = reveals[i].getBoundingClientRect().top;
-            const elementVisible = 150;
-
-            if (elementTop < windowHeight - elementVisible) {
-              reveals[i].classList.add("active");
-            } else {
-              reveals[i].classList.remove("active");
-            }
-          }
-        }
-
-        window.addEventListener("scroll", revealOnScroll);
-        revealOnScroll(); // Initial check
-      })();
-
-
+// Preload images
+window.addEventListener('load', function() {
+  const images = ['about.jpg', 'home.jpg', '1.png', '2.jpg', '3.jpg', '4.jpg'];
+  images.forEach(function(src) {
+    const img = new Image();
+    img.src = src;
+  });
+});
