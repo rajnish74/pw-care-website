@@ -1,3 +1,8 @@
+<!-- ye website responsive nhi hai ise responsive bnao or jo bugs hai isme fix kro or
+updated code do mujhe complte isme mobile navigation icon pr click krne pr kuch
+nhi hor ha hai ise bhi fix kro or dekho kya problem hai design same hona chahiye
+design ko bina chede -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,7 +75,6 @@
     <!-- Topbar -->
     <div id="topbar" class="d-flex align-items-center fixed-top">
       <div class="container d-flex justify-content-between align-items-center">
-        <!-- LEFT CONTACT DETAILS -->
         <div class="contact-info d-flex align-items-center">
           <span>
             <i class="bi bi-envelope"></i>
@@ -80,14 +84,13 @@
             <i class="bi bi-phone"></i>
             +91 83765 72523
           </span>
-          <span>
+          <span class="d-none d-md-inline">
             <i class="bi bi-clock"></i>
             Mon-Sun: 24/7 Open
           </span>
         </div>
 
-        <!-- RIGHT SOCIAL ICONS -->
-        <div class="social-links d-flex align-items-center">
+        <div class="social-links d-none d-sm-flex align-items-center">
           <a href="#"><i class="bi bi-facebook"></i></a>
           <a href="#"><i class="bi bi-instagram"></i></a>
           <a href="#"><i class="bi bi-twitter"></i></a>
@@ -102,13 +105,15 @@
       <div class="container d-flex align-items-center justify-content-between">
         <h1 class="logo me-auto"><a href="index.html">PW-CARE</a></h1>
 
+        <!-- Navigation Menu -->
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
-            <li><a href="#home" class="nav-link scrollto active">Home</a></li>
-            <li><a href="#about" class="nav-link scrollto">About</a></li>
-            <li><a href="#services" class="nav-link scrollto">Services</a></li>
-            <li><a href="#doctors" class="nav-link scrollto">Doctors</a></li>
-            <li><a href="#contact" class="nav-link scrollto">Contact</a></li>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="aboutus.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <!-- CHANGED -->
+            <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -191,6 +196,9 @@
               <p class="description">
                 Routine health checkup for early detection & long-term wellness.
               </p>
+              <a href="hii.html?service=regular-checkup" class="learn-more"
+                >Learn More »</a
+              >
             </div>
           </div>
 
@@ -204,6 +212,7 @@
                 Accurate diagnostic blood testing with fast and reliable
                 reports.
               </p>
+              <a href="hii.html?service=blood-test">Learn More »</a>
             </div>
           </div>
 
@@ -216,6 +225,7 @@
               <p class="description">
                 Instant temperature analysis for fever and infection monitoring.
               </p>
+              <a href="hii.html?service=emergency-care">Learn More »</a>
             </div>
           </div>
 
@@ -230,6 +240,7 @@
               <p class="description">
                 Guidance on proper medication usage and dosage safety.
               </p>
+              <a href="hii.html?service=online-consultation">Learn More »</a>
             </div>
           </div>
         </div>
@@ -335,7 +346,7 @@
               <p>
                 <strong>Doctors</strong> providing world-class medical support.
               </p>
-              <a href="#doctors">Learn More »</a>
+              <a href="hii.html?service=regular-checkup">Learn More »</a>
             </div>
           </div>
 
@@ -355,7 +366,7 @@
               <p>
                 <strong>Departments</strong> specializing in advanced treatment.
               </p>
-              <a href="#services">Learn More »</a>
+              <a href="hii.html?service=blood-test">Learn More »</a>
             </div>
           </div>
 
@@ -375,7 +386,7 @@
               <p>
                 <strong>Research</strong> programs improving medical innovation.
               </p>
-              <a href="#">Learn More »</a>
+              <a href="hii.html?service=emergency-care">Learn More »</a>
             </div>
           </div>
 
@@ -396,7 +407,7 @@
                 <strong>Awards</strong> recognizing our excellence in
                 healthcare.
               </p>
-              <a href="#">Learn More »</a>
+              <a href="hii.html?doctor=dr-rozaan">Learn More »</a>
             </div>
           </div>
         </div>
